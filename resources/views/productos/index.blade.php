@@ -45,4 +45,11 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class="d-flex justify-content-between align-items-center">
+        <small class="text-muted">
+            Mostrando {{ $productos->firstItem() }}-{{ $productos->lastItem() }} de {{ $productos->total() }} productos
+        </small>
+        {{ $productos->onEachSide(1)->links('pagination::bootstrap-5') }}
+    </div>
 @endsection
